@@ -3,7 +3,7 @@ name: Deploy Laravel + Vue to O2Switch
 on:
   push:
     branches:
-      - master  # ou master
+      - main  # ou master
 
 jobs:
   deploy:
