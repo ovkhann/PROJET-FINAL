@@ -32,7 +32,7 @@ export async function logout() {
 
 export async function register(payload:any) {
     await Axios.get('/sanctum/csrf-cookie', {
-        baseURL: 'http://localhost:8000'
+        baseURL: 'https://projet.revolverealm.com'
     });
     
     return await Axios.post('/api/register', payload)

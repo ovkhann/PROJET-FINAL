@@ -45,7 +45,7 @@ const sendMessage = async () => {
 
   try {
     // POST vers Laravel API publique
-    const res = await Axios.post('http://localhost:8000/api/messages', form.value, {
+    const res = await Axios.post('https://projet.revolverealm.com/api/messages', form.value, {
       headers: { 'Content-Type': 'application/json' }
     })
 
