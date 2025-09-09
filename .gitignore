@@ -1,0 +1,12 @@
+# Node / Vue
+projet-spa/node_modules/
+projet-spa/dist/
+
+# Laravel / PHP
+projet-api/vendor/
+projet-api/.env
+projet-api/storage/framework/cache/*
+projet-api/storage/logs/*
+
+# Git
+.git/
