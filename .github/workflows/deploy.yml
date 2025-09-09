@@ -13,6 +13,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Build du front avant déploiement
+      - name: Build Front
+        run: |
+          cd projet-spa
+          npm install
+          npm run build
+
       # Déploiement du front (Vue SPA)
       - name: Deploy Front (SPA)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -23,6 +30,7 @@ jobs:
           protocol: ftps
           local-dir: projet-spa/dist/
           server-dir: projet-front.revolverealm.com/
+
 
       # Déploiement de l'API (Laravel)
       - name: Deploy API (Laravel)
