@@ -30,7 +30,7 @@ jobs:
           server: yeux.o2switch.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: projet-spa/dist
+          local-dir: projet-spa/dist/
           server-dir: projet-front.revolverealm.com
           exclude: node_modules/**, .git/**, .env
 
