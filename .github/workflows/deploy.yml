@@ -3,42 +3,54 @@ name: Deploy to O2Switch
 on:
   push:
     branches:
-      - main   # lance le déploiement uniquement sur la branche main
+      - main
 
 jobs:
-  ftp-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Build du front avant déploiement
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
       - name: Build Front
         run: |
           cd projet-spa
           npm install
           npm run build
 
-      # Déploiement du front (Vue SPA)
-      - name: Deploy Front (SPA)
+      - name: Deploy Front via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: yeux.o2switch.net
-          username: ${{ secrets.FTP_USERNAME }}
+          username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: projet-spa/dist/
-          server-dir: projet-front.revolverealm.com/
+          local-dir: projet-spa/dist
+          server-dir: projet-front.revolverealm.com
+          exclude: node_modules/**, .git/**, .env
 
-
-      # Déploiement de l'API (Laravel)
-      - name: Deploy API (Laravel)
+      - name: Deploy API via FTP (sans vendor)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: yeux.o2switch.net
-          username: ${{ secrets.FTP_USERNAME }}
+          username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
-          local-dir: projet-api/
-          server-dir: projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api/
+          local-dir: projet-api
+          server-dir: projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api
+          exclude: vendor/**, node_modules/**, .git/**, storage/framework/cache/**, storage/logs/**
+
+      - name: Install PHP dependencies on server
+        uses: appleboy/ssh-action@v0.1.9
+        with:
+          host: yeux.o2switch.net
+          username: ${{ secrets.FTP_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd ~/projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api
+            composer install --no-dev --prefer-dist
+            php artisan cache:clear
