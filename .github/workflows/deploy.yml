@@ -1,55 +1,36 @@
-name: Deploy Laravel + Vue to O2Switch
+name: Deploy to O2Switch
 
 on:
   push:
     branches:
-      - main  # ou master
+      - main   # lance le déploiement uniquement sur la branche main
 
 jobs:
-  deploy:
+  ftp-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Récupérer le code du repo
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2️⃣ Configurer SSH
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.7.0
+      # Déploiement du front (Vue SPA)
+      - name: Deploy Front (SPA)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+          server: yeux.o2switch.net
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: projet-spa/dist/
+          server-dir: projet-front.revolverealm.com/
 
-      # 3️⃣ Déployer sur le serveur avec sécurité
-      - name: Deploy via SSH
-        run: |
-          ssh -o StrictHostKeyChecking=no chov2692@revolverealm.com "
-          set -e  # Arrêter si une commande échoue
-
-          FRONT_DIR=~/projet-front.revolverealm.com
-          SRC_DIR=~/projet.revolverealm.com/ovkhann/PROJET-PHARE
-          BACKUP_DIR=~/projet-front-backup-$(date +%Y%m%d%H%M%S)
-
-          echo '🔹 Backup du front actuel...'
-          if [ -d \$FRONT_DIR ]; then
-            cp -r \$FRONT_DIR \$BACKUP_DIR
-            echo \"Backup créé : \$BACKUP_DIR\"
-          fi
-
-          echo '🔹 Déploiement du code source...'
-          cd \$SRC_DIR
-          git pull || { echo 'Erreur git pull'; exit 1; }
-
-          composer install --no-dev --prefer-dist || { echo 'Erreur composer install'; exit 1; }
-
-          npm install || { echo 'Erreur npm install'; exit 1; }
-          npm run build || { echo 'Erreur npm run build'; exit 1; }
-
-          echo '🔹 Copie du front compilé...'
-          rsync -a --delete dist/ \$FRONT_DIR || { echo 'Erreur rsync'; exit 1; }
-
-          echo '🔹 Nettoyage cache Laravel...'
-          php artisan cache:clear || { echo 'Erreur cache clear'; exit 1; }
-
-          echo '✅ Déploiement terminé avec succès !'
-          "
+      # Déploiement de l'API (Laravel)
+      - name: Deploy API (Laravel)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: yeux.o2switch.net
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: projet-api/
+          server-dir: projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api/
