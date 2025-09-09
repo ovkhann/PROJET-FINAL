@@ -10,20 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1️⃣ Récupérer le code
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # 2️⃣ Configurer Node.js pour build front
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
 
+      # 3️⃣ Build front
       - name: Build Front
         run: |
           cd projet-spa
           npm install
           npm run build
 
+      # 4️⃣ Déployer le front via FTP (dist seulement)
       - name: Deploy Front via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -31,19 +35,21 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: projet-spa/dist/
-          server-dir: projet-front.revolverealm.com
+          server-dir: projet-front.revolverealm.com/
           exclude: node_modules/**, .git/**, .env
 
+      # 5️⃣ Déployer l’API via FTP (sans vendor)
       - name: Deploy API via FTP (sans vendor)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: yeux.o2switch.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: projet-api
-          server-dir: projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api
+          local-dir: projet-api/
+          server-dir: projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api/
           exclude: vendor/**, node_modules/**, .git/**, storage/framework/cache/**, storage/logs/**
 
+      # 6️⃣ Installer les dépendances PHP côté serveur
       - name: Install PHP dependencies on server
         uses: appleboy/ssh-action@v0.1.9
         with:
