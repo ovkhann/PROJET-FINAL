@@ -1,4 +1,4 @@
-name: Deploy Front & Back to O2Switch
+name: Deploy Front to O2Switch
 
 on:
   push:
@@ -6,15 +6,15 @@ on:
       - main
 
 jobs:
-  deploy:
+  deploy-front:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout code
+      # 1️⃣ Récupérer le code
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2️⃣ Set up Node.js
+      # 2️⃣ Configurer Node.js
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
@@ -27,7 +27,7 @@ jobs:
           npm install
           npm run build
 
-      # 4️⃣ Deploy Front via FTP
+      # 4️⃣ Déployer le front via FTP
       - name: Deploy Front via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
@@ -36,28 +36,3 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: projet-spa/dist/
           server-dir: projet-front.revolverealm.com/
-          exclude: node_modules/**, .git/**, .env
-
-      # 5️⃣ Deploy Back via FTP (sans vendor)
-      - name: Deploy Back via FTP (sans vendor)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-        with:
-          server: yeux.o2switch.net
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: projet-api/
-          server-dir: projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api/
-          exclude: vendor/**, node_modules/**, .git/**, storage/framework/cache/**, storage/logs/**
-
-      # 6️⃣ Install & Update PHP dependencies on server
-      - name: Install & Update PHP dependencies on server
-        uses: appleboy/ssh-action@v0.1.9
-        with:
-          host: yeux.o2switch.net
-          username: ${{ secrets.FTP_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd ~/projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api
-            composer install --no-dev --prefer-dist
-            composer update --no-dev --prefer-dist
-            php artisan cache:clear
