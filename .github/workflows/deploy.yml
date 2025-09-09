@@ -28,7 +28,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: yeux.o2switch.net
-          username: ${{ secrets.FTP_USER }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: projet-spa/dist
           server-dir: projet-front.revolverealm.com
@@ -38,7 +38,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: yeux.o2switch.net
-          username: ${{ secrets.FTP_USER }}
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: projet-api
           server-dir: projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api
@@ -48,7 +48,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.9
         with:
           host: yeux.o2switch.net
-          username: ${{ secrets.FTP_USER }}
+          username: ${{ secrets.FTP_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd ~/projet.revolverealm.com/ovkhann/PROJET-PHARE/projet-api
