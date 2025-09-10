@@ -69,7 +69,7 @@ const sendMessage = async () => {
 }
 </script>
 
-<style>
+<style scoped>
 .top-container {
   width: 60%;
   box-shadow: 6px 10px 9px gray;
