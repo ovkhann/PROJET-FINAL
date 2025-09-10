@@ -4,7 +4,9 @@
     <input v-model="form.email" type="email" placeholder="Votre email" required class="border p-2 w-full" />
     <input v-model="form.subject" type="text" placeholder="Sujet" class="border p-2 w-full" />
     <textarea v-model="form.message" placeholder="Votre message" required class="border p-2 w-full"></textarea>
-    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Envoyer</button>
+    <div class="form-group">
+      <button type="submit" class="button">Envoyer</button>
+    </div>
 
     <p v-if="successMessage" class="text-green-600 mt-2">{{ successMessage }}</p>
     <p v-if="errorMessage" class="text-red-600 mt-2">{{ errorMessage }}</p>
@@ -66,7 +68,6 @@ const sendMessage = async () => {
 </script>
 
 <style>
-
 .top-container {
   width: 60%;
   box-shadow: 6px 10px 9px gray;
@@ -74,8 +75,37 @@ const sendMessage = async () => {
   padding: 2vw;
 }
 
+.form input {
+  border-radius: 0vw;
+  border: unset;
+  padding: .5vw;
+  font-family: nexa-regular;
+  width: 19vw;
+}
 
+.form textarea {
+  border-radius: 0vw;
+  border: unset;
+  padding: .5vw;
+  font-family: nexa-regular;
+  width: 19vw;
+}
 
+.button {
+  background-color: #f2eadf;
+  color: #403933;
+  padding: .5vw 1vw;
+  border: none;
+  cursor: pointer;
+}
+
+.form-group {
+    border-radius: 0vw;
+    border: unset;
+    font-family: nexa-regular;
+    width: 13vw;
+    margin-top: 1.5vw;
+}
 
 
 </style>
