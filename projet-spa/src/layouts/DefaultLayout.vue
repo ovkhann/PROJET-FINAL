@@ -668,25 +668,44 @@ nav a:first-of-type {
 
 
 
-/* @media (max-width: 764px) {
-  header {
+@media (max-width: 764px) {
+    .container-logo-footer {
+    width: 33%;
     display: flex;
-    place-items: center;
+    height: auto;
+    position: relative;
   }
 
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
+  .container-logo-footer img {
+    width: 100%;
+    object-fit: cover;
+    height: 33vw;
+    object-position: center;
+}
+
+.social-media {
+    display: flex
+;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+    width: 33%;
+    height: auto;
+}
 
-  nav {
+.titre-social {
+    color: var(--color-brown);
+    font-size: 4vw;
     text-align: center;
-    font-size: 1rem;
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-} */
+}
+
+.titre-subscribe {
+    margin-bottom: 0vw;
+    font-size: 4vw;
+}
+
+.text-style {
+    font-size: 2vw;
+}
+}
 </style>
