@@ -809,6 +809,16 @@ nav a:first-of-type {
     align-items: center;
   }
 
+  .cart-icon {
+    position: absolute;
+    cursor: pointer;
+    width: 6%;
+    right: 13vw;
+    top: 3vw;
+    display: flex;
+    height: auto;
+  }
+
   nav a {
     display: inline-block;
     padding: 0 1rem;
