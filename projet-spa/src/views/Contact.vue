@@ -79,6 +79,7 @@ const sendMessage = async () => {
   box-shadow: 6px 10px 9px gray;
   background: #403933;
   padding: 2vw;
+  gap: 0.8vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -88,6 +89,7 @@ const sendMessage = async () => {
 h1 {
   color: rgb(242, 234, 223);
   margin-bottom: 0vw;
+  font-size: 2rem;
 }
 
 .top-container input {
@@ -119,6 +121,7 @@ h1 {
   border: unset;
   font-family: nexa-regular;
   width: 13vw;
+  margin-top: 1.5vw;
 }
 
 .formulaire-contact {
