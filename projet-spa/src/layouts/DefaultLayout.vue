@@ -885,7 +885,7 @@ nav a:first-of-type {
     align-items: center;
   }
 
-  .cart-item-info input {
+  .cart-item-info input[type="number"]  {
     width: 35px;
     display: flex;
     padding: 0 3px;
