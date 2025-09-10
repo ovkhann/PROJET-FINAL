@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="sendMessage" class="space-y-4 max-w-md mx-auto">
+  <form @submit.prevent="sendMessage" class="space-y-4 max-w-md top-container">
     <input v-model="form.name" type="text" placeholder="Votre nom" required class="border p-2 w-full" />
     <input v-model="form.email" type="email" placeholder="Votre email" required class="border p-2 w-full" />
     <input v-model="form.subject" type="text" placeholder="Sujet" class="border p-2 w-full" />
@@ -23,7 +23,7 @@ useHead({
     { property: 'og:title', content: 'Contact | Revolve Realm' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://revolverealm.com/contact'  }
+    { rel: 'canonical', href: 'https://revolverealm.com/contact' }
   ]
 })
 
@@ -64,3 +64,18 @@ const sendMessage = async () => {
   }
 }
 </script>
+
+<style>
+
+.top-container {
+  width: 60%;
+  box-shadow: 6px 10px 9px gray;
+  background: #403933;
+  padding: 2vw;
+}
+
+
+
+
+
+</style>
