@@ -222,7 +222,7 @@ function handleImageError(event: Event) {
 
 @media screen and (max-width: 767px) {
 
-  .shop-page[data-v-e6a89dbb] {
+  .shop-page {
     padding: unset;
     height: 100vh;
     width: 100%;
