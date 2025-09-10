@@ -230,6 +230,14 @@ h2 {
     text-align: center;
   }
 
+  form {
+    text-align: center;
+    display: flex
+;
+    gap: 5vw;
+    flex-direction: column;
+}
+
 
 
 

@@ -5,14 +5,14 @@ import * as AuthService from '@/_services/AuthService';
 import { useHead } from '@vueuse/head';
 
 useHead({
-  title: 'Register | Revolve Realm',
-  meta: [
-    { name: 'description', content: "Create your Revolve Realm account to join our streetwear community, save your favorites, and enjoy a personalized shopping experience." },
-    { property: 'og:title', content: 'Register | Revolve Realm' }
-  ],
-  link: [
-    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/register'  }
-  ]
+    title: 'Register | Revolve Realm',
+    meta: [
+        { name: 'description', content: "Create your Revolve Realm account to join our streetwear community, save your favorites, and enjoy a personalized shopping experience." },
+        { property: 'og:title', content: 'Register | Revolve Realm' }
+    ],
+    link: [
+        { rel: 'canonical', href: 'https://projet-front.revolverealm.com/register' }
+    ]
 })
 
 const form = ref({
@@ -137,5 +137,74 @@ async function handleRegister() {
 .form-error {
     color: red;
     font-size: 0.8rem;
+}
+
+@media screen and (max-width: 767px) {
+
+    .top-container {
+        width: 100%;
+        box-shadow: 6px 10px 9px gray;
+        background: #403933;
+        padding: 5vw;
+        gap: 5vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    form {
+        text-align: center;
+        display: flex;
+        gap: 5vw;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-bloc-titre {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .container-champs {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        gap: 2vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .form-group input {
+        border-radius: 0vw;
+        border: unset;
+        padding: .5rem;
+        font-family: nexa-regular;
+        font-size: 3vw;
+        width: 50vw;
+    }
+
+    .form-group:nth-child(6) {
+        margin-top: 5vw;
+    }
+
+    .button {
+        background-color: #f2eadf;
+        color: #403933;
+        padding: 1.5vw 6vw;
+        border: none;
+        font-size: 3vw;
+        cursor: pointer;
+    }
+
+
+
+
+
+
 }
 </style>
