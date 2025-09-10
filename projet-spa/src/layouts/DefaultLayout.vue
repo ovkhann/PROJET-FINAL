@@ -82,8 +82,8 @@ async function logoutUser() {
               <RouterLink to="/shop" @click="mobileMenuOpen = false">SHOP</RouterLink>
               <RouterLink to="/contact" @click="mobileMenuOpen = false">CONTACT</RouterLink>
               <div class="auth-links">
-                <div v-if="User.isLogged">
-                  <button @click="logoutUser">LOGOUT</button>
+                <div class="account" v-if="User.isLogged">
+                  <button class="deconnexion-button" @click="logoutUser">LOGOUT</button>
                   <span>{{ User.user?.email }}</span>
                 </div>
                 <RouterLink v-else to="/login">LOGIN</RouterLink>
@@ -766,6 +766,25 @@ nav a:first-of-type {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
+  nav {
+    width: fit-content;
+    font-size: 5vw;
+    height: auto;
+    gap: 4vw;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .container-compte-co {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vw;
+    justify-content: center;
+  }
+
   /* Mobile menu */
   .mobile-menu {
     position: absolute;
@@ -780,6 +799,7 @@ nav a:first-of-type {
     gap: 1rem;
     border-top: 1px solid #ddd;
     z-index: 1000;
+    justify-content: center;
     justify-content: center;
   }
 
@@ -803,6 +823,13 @@ nav a:first-of-type {
   .mobile-only {
     display: flex;
   }
+
+
+
+
+
+
+
 
 
   .container-logo-footer {
