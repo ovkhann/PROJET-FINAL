@@ -819,6 +819,127 @@ nav a:first-of-type {
     height: auto;
   }
 
+  .cart-badge {
+    position: absolute;
+    top: -1px;
+    right: -6px;
+    background: red;
+    color: #fff;
+    font-family: system-ui;
+    font-size: 0.6rem;
+    font-weight: 700;
+    border-radius: 60%;
+    padding: 0px 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cart-panel {
+    position: fixed;
+    top: 0;
+    right: -70vw;
+    width: 70vw;
+    height: 100%;
+    background-color: var(--color-brown);
+    box-shadow: -2px 0 5px #0000004d;
+    transition: right .3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #h3-cart {
+    margin: 4vw;
+    font-family: nexa-book;
+    font-size: 2rem;
+  }
+
+  .cart-close-btn {
+    position: relative;
+    right: 10px;
+    color: var(--color-beige);
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .container-image-produit-panier img {
+    width: 20vw;
+    height: 20vw;
+    border: solid 3px var(--color-creme);
+    position: relative;
+    border-radius: 2vw;
+    object-fit: cover;
+  }
+
+  .cart-item-info p {
+    margin: 0vw;
+    display: flex;
+    gap: 1vw;
+    font-size: 3vw;
+    font-family: sans-serif;
+    align-items: center;
+  }
+
+  .cart-item-info input {
+    width: 35px;
+    display: flex;
+    padding: 0 3px;
+    font-family: sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+
+  .cart-item {
+    padding: 1.5rem 0;
+    display: flex;
+    gap: 3vw;
+    border-bottom: 3px solid var(--color-beige);
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .cart-total span {
+    font-weight: 700;
+    font-size: 4vw;
+  }
+
+  .btn-clear-cart {
+    display: flex;
+    padding: 5px 15px;
+    font-family: sans-serif;
+    width: fit-content;
+    background-color: var(--color-beige);
+    color: var(--color-brown);
+    border: none;
+    font-size: 3vw;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color .2s ease;
+  }
+
+  #panier-vide {
+    margin: 4vw;
+    font-family: nexa-light;
+    font-size: 4vw;
+    color: var(--color-beige);
+  }
+
+  .cart-item-info p {
+    margin: 0vw;
+    display: flex;
+    gap: 1.5vw;
+    font-size: 3vw;
+    font-family: sans-serif;
+    align-items: center;
+  }
+
   nav a {
     display: inline-block;
     padding: 0 1rem;
