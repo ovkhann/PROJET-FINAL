@@ -88,7 +88,7 @@ async function logoutUser() {
                   <span>{{ User.user?.email }}</span>
                   <button class="deconnexion-button" @click="logoutUser">LOGOUT</button>
                 </div>
-                <RouterLink v-else to="/login">LOGIN</RouterLink>
+                <RouterLink v-else @click="mobileMenuOpen = false" to="/login">LOGIN</RouterLink>
               </div>
             </nav>
           </div>
