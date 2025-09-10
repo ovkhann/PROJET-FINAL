@@ -146,4 +146,86 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 767px) {
+
+  .formulaire-contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    flex: 1;
+    padding: 7vw;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .top-container {
+    width: 100%;
+    box-shadow: 6px 10px 9px gray;
+    background: #403933;
+    padding: 5vw;
+    gap: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .texte-style {
+    font-size: 3.5vw;
+  }
+
+  .container-champs {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .top-container input {
+    border-radius: 0vw;
+    border: unset;
+    padding: .5vw;
+    font-family: nexa-regular;
+    font-size: 3vw;
+    width: 50vw;
+  }
+
+  .top-container textarea {
+    border-radius: 0vw;
+    border: unset;
+    padding: .5vw;
+    font-family: nexa-regular;
+    width: 50vw;
+    font-size: 3vw;
+  }
+
+  .button {
+    background-color: #f2eadf;
+    color: #403933;
+    padding: 1.5vw 6vw;
+    border: none;
+    font-size: 3vw;
+    cursor: pointer;
+  }
+
+  .form-group {
+    border-radius: 0vw;
+    border: unset;
+    font-family: nexa-regular;
+    width: fit-content;
+    margin-top: 5vw;
+  }
+
+
+
+
+
+
+
+}
 </style>
