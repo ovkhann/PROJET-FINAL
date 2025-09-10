@@ -741,7 +741,7 @@ nav a:first-of-type {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 25px;
+    width: 30px;
     height: 20px;
     cursor: pointer;
   }
@@ -803,7 +803,7 @@ nav a:first-of-type {
     align-items: center;
   }
 
-  nav a[data-v-90296cda] {
+  nav a {
     display: inline-block;
     padding: 0 1rem;
     color: #403933;
