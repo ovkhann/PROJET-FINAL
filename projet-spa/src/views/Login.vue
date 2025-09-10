@@ -11,7 +11,7 @@ useHead({
     { property: 'og:title', content: 'Login | Revolve Realm' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/login'  }
+    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/login' }
   ]
 })
 
@@ -151,5 +151,95 @@ h2 {
   box-shadow: 6px 10px 9px grey;
   background: #403933;
   padding: 2vw;
+}
+
+@media screen and (max-width: 767px) {
+
+  .formulaire-connexion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    flex: 1;
+    padding: 7vw;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .top-container {
+    width: 100%;
+    box-shadow: 6px 10px 9px gray;
+    background: #403933;
+    padding: 5vw;
+    gap: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h2 {
+    color: #f2eadf;
+    font-size: 2rem;
+    margin-bottom: 0vw;
+  }
+
+  .texte-style {
+    font-size: 3.5vw;
+  }
+
+  .container-champs {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .input {
+    border-radius: 0vw;
+    border: unset;
+    padding: .5rem;
+    font-family: nexa-regular;
+    font-size: 3vw;
+    width: 50vw;
+  }
+
+  .form-group:nth-child(3) {
+    border-radius: 0vw;
+    border: unset;
+    font-family: nexa-regular;
+    width: fit-content;
+    margin-top: 5vw;
+  }
+
+  .button {
+    background-color: #f2eadf;
+    color: #403933;
+    padding: 1.5vw 6vw;
+    border: none;
+    font-size: 3vw;
+    cursor: pointer;
+  }
+
+  .register-link {
+    font-size: 3vw;
+    color: #f2eadf;
+    text-align: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 </style>
