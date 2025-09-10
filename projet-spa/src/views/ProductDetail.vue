@@ -175,7 +175,7 @@ function handleImageError(event: Event) {
         </div>
 
         <!-- Description du produit -->
-        <p class="description">{{ product.description }}</p>
+        <p class="description">Description : {{ product.description }}</p>
       </div>
     </div>
   </section>
@@ -350,5 +350,91 @@ function handleImageError(event: Event) {
   background-color: var(--color-brown);
   color: var(--color-beige);
   border-color: var(--color-brown);
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+  .product-detail-container {
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 10vw;
+    padding: 2rem;
+    gap: 8vw;
+    position: relative;
+    flex-direction: column;
+  }
+
+  .gallery-left {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main-image {
+    width: 100%;
+    height: auto;
+    display: flex;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-image img {
+    width: 80vw;
+    height: 80vw;
+    border: 3px solid var(--color-beige);
+    object-fit: cover;
+    position: relative;
+    border-radius: 2vw;
+  }
+
+  .info-right p {
+    font-weight: 700;
+    margin: .5rem 0;
+    color: var(--color-brown);
+    font-family: nexa-book;
+    font-size: 3vw;
+  }
+
+  #label-size {
+    color: var(--color-brown) !important;
+    font-weight: 700;
+    font-family: nexa-book;
+    font-size: 3vw;
+    margin: .5rem 0px;
+  }
+
+  .size-options {
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+  }
+
+  .size-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    color: var(--color-brown);
+    font-size: 3.5vw;
+    font-family: sans-serif;
+    justify-content: center;
+    background: var(--color-beige);
+    align-items: center;
+    border: 1px solid var(--color-brown);
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all .2s;
+  }
+
+
 }
 </style>
