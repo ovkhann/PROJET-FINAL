@@ -359,7 +359,7 @@ function handleImageError(event: Event) {
     display: flex;
     width: 100%;
     height: auto;
-    margin-top: 20vw;
+    margin-top: 10vw;
     padding: 2rem;
     gap: 8vw;
     position: relative;
