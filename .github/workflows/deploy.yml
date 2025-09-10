@@ -36,3 +36,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: projet-spa/dist/
           server-dir: projet-front.revolverealm.com/
+          protocol: ftps
+
