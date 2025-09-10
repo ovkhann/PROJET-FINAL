@@ -108,7 +108,7 @@ function addProductToCart() {
   if (!User.isLogged || !product.value) return
 
   if (!selectedOptionId.value) {
-    alert("Veuillez choisir une taille avant d’ajouter au panier !")
+    alert("Please select a size before adding to your cart !")
     return
   }
 
@@ -124,7 +124,7 @@ function addProductToCart() {
     size: selectedOption.size
   })
 
-  alert(`${product.value.name} (${selectedOption.size}) ajouté au panier !`)
+  alert(`${product.value.name} (${selectedOption.size}) added to cart !`)
 }
 
 function selectImage(img: string) {
@@ -158,9 +158,9 @@ function handleImageError(event: Event) {
 
         <!-- Sélecteur de taille -->
         <div v-if="product.options.length">
-          <label for="option-select">Taille :</label>
+          <label for="option-select">Size :</label>
           <select id="option-select" v-model="selectedOptionId" class="option-select">
-            <option :value="null" disabled>Choisir une taille</option>
+            <option :value="null" disabled>Choose a size</option>
             <option v-for="opt in product.options" :key="opt.id" :value="opt.id">
               {{ opt.size }}
             </option>
@@ -168,7 +168,7 @@ function handleImageError(event: Event) {
         </div>
 
         <button v-if="User.isLogged" @click="addProductToCart" class="add-to-cart-btn">
-          Ajouter au panier
+          Add to cart
         </button>
 
         <p class="description">{{ product.description }}</p>
