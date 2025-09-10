@@ -11,7 +11,7 @@ useHead({
     { property: 'og:title', content: 'Shop | Revolve Realm' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/shop'  }
+    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/shop' }
   ]
 })
 
@@ -216,5 +216,69 @@ function handleImageError(event: Event) {
 
 .product-card .price {
   color: var(--color-brown);
+}
+
+
+
+@media screen and (max-width: 767px) {
+
+  .shop-page[data-v-e6a89dbb] {
+    padding: unset;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+  }
+
+  .category-filters button,
+  .size-filters button {
+    padding: .5rem 1rem;
+    border: none;
+    font-size: 3vw;
+    background-color: var(--color-beige);
+    color: var(--color-brown);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: all .3s ease-in-out;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 calc(25% - 2rem);
+    max-width: 40vw;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    border: 1px solid var(--color-creme);
+    border-radius: 10px;
+    padding: 0rem;
+    transition: transform .2s;
+  }
+
+  .product-card img {
+    width: 100%;
+    height: 45vw;
+    object-fit: cover;
+    border-bottom: solid 1px var(--color-creme);
+    margin-bottom: 1rem;
+}
+
+.product-card .name {
+    font-weight: 700;
+    color: var(--color-brown);
+    font-size: 3.5vw;
+}
+
+.product-card .price {
+    color: var(--color-brown);
+    font-size: 3.5vw;
+}
+
+
+
+
+
+
 }
 </style>
