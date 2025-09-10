@@ -175,7 +175,7 @@ function handleImageError(event: Event) {
         </div>
 
         <!-- Description du produit -->
-        <p class="description">Description : {{ product.description }}</p>
+        <p class="description">Description : <br>{{ product.description }}</br></p>
       </div>
     </div>
   </section>
