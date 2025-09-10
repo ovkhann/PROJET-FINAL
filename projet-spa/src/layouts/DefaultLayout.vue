@@ -78,9 +78,11 @@ async function logoutUser() {
         <transition name="slide-fade">
           <div class="mobile-menu" v-if="mobileMenuOpen">
             <nav>
-              <RouterLink to="/" @click="mobileMenuOpen = false">HOME</RouterLink>
-              <RouterLink to="/shop" @click="mobileMenuOpen = false">SHOP</RouterLink>
-              <RouterLink to="/contact" @click="mobileMenuOpen = false">CONTACT</RouterLink>
+              <div class="container-links">
+                <RouterLink to="/" @click="mobileMenuOpen = false">HOME</RouterLink>
+                <RouterLink to="/shop" @click="mobileMenuOpen = false">SHOP</RouterLink>
+                <RouterLink to="/contact" @click="mobileMenuOpen = false">CONTACT</RouterLink>
+              </div>
               <div class="auth-links">
                 <div class="account" v-if="User.isLogged">
                   <button class="deconnexion-button" @click="logoutUser">LOGOUT</button>
@@ -792,12 +794,11 @@ nav a:first-of-type {
     height: 93vh;
     left: 0;
     right: 0;
-    background-color: #fff;
+    background-color: var(--color-brown);
     padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    border-top: 1px solid #ddd;
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -806,7 +807,7 @@ nav a:first-of-type {
   nav a {
     display: inline-block;
     padding: 0 1rem;
-    color: #403933;
+    color: var(--color-beige) !important;
     font-family: nexa-bold;
     border-left: unset;
   }
@@ -823,13 +824,21 @@ nav a:first-of-type {
     width: fit-content;
     text-decoration: none;
     background: none;
-    color: var(--color-brown);
+    color: var(--color-beige);
     transition: .4s;
     font-family: nexa-bold;
     padding: 0 .5vw;
     border: none;
     border-left: unset;
     border-right: unset;
+  }
+
+  .account span {
+    padding: 0 .5vw;
+    font-family: nexa-bold;
+    color: var(--color-beige);
+    font-style: italic;
+    text-transform: uppercase;
   }
 
   .slide-fade-enter-active,
