@@ -11,9 +11,9 @@
         <input v-model="form.email" type="email" placeholder="Your e-mail" required class="border p-2 w-full" />
         <input v-model="form.subject" type="text" placeholder="Subject" class="border p-2 w-full" />
         <textarea v-model="form.message" placeholder="Your message" required class="border p-2 w-full"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="button">Send</button>
+        <div class="form-group">
+          <button type="submit" class="button">Send</button>
+        </div>
       </div>
       <p v-if="successMessage" class="text-green-600 mt-2">{{ successMessage }}</p>
       <p v-if="errorMessage" class="text-red-600 mt-2">{{ errorMessage }}</p>
