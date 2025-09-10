@@ -56,17 +56,15 @@ async function logoutUser() {
           </nav>
 
           <!-- Burger menu icon (mobile) -->
-          <div class="container-cart-logo">
-            <div class="cart-icon" @click="toggleCart">
-              <img src="@/assets/images/cart-icon.svg" alt="Panier" />
-              <span v-if="cartStore.totalItems > 0" class="cart-badge">{{ cartStore.totalItems }}</span>
-            </div>
+          <div class="cart-icon" @click="toggleCart">
+            <img src="@/assets/images/cart-icon.svg" alt="Panier" />
+            <span v-if="cartStore.totalItems > 0" class="cart-badge">{{ cartStore.totalItems }}</span>
+          </div>
 
-            <div class="burger-menu mobile-only" @click="toggleMobileMenu">
-              <span :class="{ open: mobileMenuOpen }"></span>
-              <span :class="{ open: mobileMenuOpen }"></span>
-              <span :class="{ open: mobileMenuOpen }"></span>
-            </div>
+          <div class="burger-menu mobile-only" @click="toggleMobileMenu">
+            <span :class="{ open: mobileMenuOpen }"></span>
+            <span :class="{ open: mobileMenuOpen }"></span>
+            <span :class="{ open: mobileMenuOpen }"></span>
           </div>
         </div>
 
