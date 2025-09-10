@@ -256,7 +256,7 @@ footer {
 .main-content {
   flex: 1;
   display: flex;
-  margin-top: 10.7vw;
+  margin-top: unset;
   flex-direction: column;
   align-items: center;
   justify-content: center;
