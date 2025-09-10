@@ -160,19 +160,21 @@ function handleImageError(event: Event) {
 
         <!-- Sélecteur de taille -->
         <div class="container-add-size">
-          <div v-if="product.options.length">
-            <label for="option-select">Size :</label>
-            <select id="option-select" v-model="selectedOptionId" class="option-select">
-              <option :value="null" disabled>Choose a size</option>
-              <option v-for="opt in product.options" :key="opt.id" :value="opt.id">
+          <div v-if="product.options.length" class="size-options">
+            <label>Size :</label>
+            <div class="sizes">
+              <div v-for="opt in product.options" :key="opt.id"
+                :class="['size-box', { selected: selectedOptionId === opt.id }]" @click="selectedOptionId = opt.id">
                 {{ opt.size }}
-              </option>
-            </select>
+              </div>
+            </div>
           </div>
           <button v-if="User.isLogged" @click="addProductToCart" class="add-to-cart-btn">
             Add to cart
           </button>
         </div>
+
+        <!-- Description du produit -->
         <p class="description">{{ product.description }}</p>
       </div>
     </div>
@@ -288,5 +290,46 @@ function handleImageError(event: Event) {
 .add-to-cart-btn:hover {
   background-color: var(--color-brown);
   color: var(--color-beige);
+}
+
+
+
+
+
+
+
+
+
+
+.size-options {
+  margin-top: 1rem;
+}
+
+.sizes {
+  display: flex;
+  gap: 0.5rem; /* espace entre les carrés */
+  margin-top: 0.5rem;
+}
+
+.size-box {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s;
+}
+
+.size-box:hover {
+  border-color: #333;
+}
+
+.size-box.selected {
+  background-color: #333;
+  color: #fff;
+  border-color: #333;
 }
 </style>
