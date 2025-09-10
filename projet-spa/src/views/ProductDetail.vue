@@ -214,6 +214,13 @@ function handleImageError(event: Event) {
   justify-content: center;
 }
 
+.container-add-size {
+  display: flex;
+  gap: 1.5vw;
+  flex-direction: column;
+}
+
+
 .main-image img {
   width: 30vw;
   height: 30vw;
@@ -301,6 +308,10 @@ function handleImageError(event: Event) {
 
 #label-size {
   color: var(--color-brown) !important;
+  font-weight: 700;
+  font-family: nexa-book;
+  font-size: 1.2vw;
+  margin: 0.5rem 0px;
 }
 
 .size-options {
