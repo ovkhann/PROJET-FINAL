@@ -146,144 +146,146 @@ function handleImageError(event: Event) {
           <img v-if="selectedImage" :src="selectedImage" :alt="product.name" @error="handleImageError" />
         </div>
         <div class="thumbnails">
-          <img v-for="(img, index) in product.picture" :key="index" :src="img" :alt="product.name"
-               class="thumbnail" @click="selectImage(img)" @error="handleImageError" />
+          <img v-for="(img, index) in product.picture" :key="index" :src="img" :alt="product.name" class="thumbnail"
+            @click="selectImage(img)" @error="handleImageError" />
         </div>
       </div>
 
       <!-- Infos produit à droite -->
       <div class="info-right">
-        <h1 class="style-h1-product">{{ product.name }}</h1>
-        <p class="price">{{ product.price.toFixed(2) }}€</p>
-
-        <!-- Sélecteur de taille -->
-        <div v-if="product.options.length">
-          <label for="option-select">Size :</label>
-          <select id="option-select" v-model="selectedOptionId" class="option-select">
-            <option :value="null" disabled>Choose a size</option>
-            <option v-for="opt in product.options" :key="opt.id" :value="opt.id">
-              {{ opt.size }}
-            </option>
-          </select>
+        <div class="container-nom-prix">
+          <h1 class="style-h1-product">{{ product.name }}</h1>
+          <p class="price">{{ product.price.toFixed(2) }}€</p>
         </div>
 
-        <button v-if="User.isLogged" @click="addProductToCart" class="add-to-cart-btn">
-          Add to cart
-        </button>
-
+        <!-- Sélecteur de taille -->
+        <div class="container-add-size">
+          <div v-if="product.options.length">
+            <label for="option-select">Size :</label>
+            <select id="option-select" v-model="selectedOptionId" class="option-select">
+              <option :value="null" disabled>Choose a size</option>
+              <option v-for="opt in product.options" :key="opt.id" :value="opt.id">
+                {{ opt.size }}
+              </option>
+            </select>
+          </div>
+          <button v-if="User.isLogged" @click="addProductToCart" class="add-to-cart-btn">
+            Add to cart
+          </button>
+        </div>
         <p class="description">{{ product.description }}</p>
       </div>
     </div>
   </section>
 
   <section v-else>
-    Chargement du produit...
+    Loading...
   </section>
 </template>
 
 <style scoped>
 .product-detail-container {
-    display: flex;
-    width: 100%;
-    height: auto;
-    padding: 2rem 2rem;
-    position: relative;
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 2rem 2rem;
+  position: relative;
 }
 
 .gallery-left {
-    width: 100%;
-    height: auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-image {
-    width: 70%;
-    height: auto;
-    display: flex;
-    object-fit: contain;
-    margin-bottom: 1rem;
-    align-items: center;
-    justify-content: center;
+  width: 70%;
+  height: auto;
+  display: flex;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .main-image img {
-    width: 30vw;
-    height: 30vw;
-    border: 3px solid var(--color-beige);
-    object-fit: cover;
-    position: relative;
-    border-radius: 2vw;
+  width: 30vw;
+  height: 30vw;
+  border: 3px solid var(--color-beige);
+  object-fit: cover;
+  position: relative;
+  border-radius: 2vw;
 }
 
 .style-h1-product {
-    color: var(--color-brown);
-    font-family: nexa-book;
-    margin: 0vw;
+  color: var(--color-brown);
+  font-family: nexa-book;
+  margin: 0vw;
 }
 
 .thumbnails {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .thumbnail {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 1px solid #ccc;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 1px solid #ccc;
 }
 
 .info-right {
-    width: 100%;
-    height: auto;
-    position: relative;
-    display: flex;
-    flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .info-right p {
-    font-weight: bold;
-    margin: 0.5rem 0;
-    color: var(--color-brown);
-    font-family: 'nexa-book';
-    font-size: 1.2vw;
+  font-weight: bold;
+  margin: 0.5rem 0;
+  color: var(--color-brown);
+  font-family: 'nexa-book';
+  font-size: 1.2vw;
 }
 
 .product-detail-page {
-    width: 100%;
-    height: auto;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .price {
-    font-weight: bold;
-    margin: 0.5rem 0;
+  font-weight: bold;
+  margin: 0.5rem 0;
 }
 
 .add-to-cart-btn {
-    padding: 0.5rem 2rem;
-    background-color: var(--color-beige);
-    color: var(--color-brown);
-    border: none;
-    font-weight: bold;
-    width: fit-content;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  padding: 0.5rem 2rem;
+  background-color: var(--color-beige);
+  color: var(--color-brown);
+  border: none;
+  font-weight: bold;
+  width: fit-content;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .add-to-cart-btn:hover {
-    background-color: var(--color-brown);
-    color: var(--color-beige);
+  background-color: var(--color-brown);
+  color: var(--color-beige);
 }
 </style>
