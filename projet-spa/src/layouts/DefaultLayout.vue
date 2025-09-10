@@ -791,7 +791,7 @@ nav a:first-of-type {
   .mobile-menu {
     position: absolute;
     top: 15vw;
-    height: 93vh;
+    height: 91vh;
     left: 0;
     right: 0;
     background-color: var(--color-brown);
