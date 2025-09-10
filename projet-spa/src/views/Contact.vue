@@ -15,8 +15,8 @@
           <button type="submit" class="button">Send</button>
         </div>
       </div>
-      <p v-if="successMessage" class="text-green-600 mt-2">{{ successMessage }}</p>
-      <p v-if="errorMessage" class="text-red-600 mt-2">{{ errorMessage }}</p>
+      <p v-if="successMessage" class="text-envoie-style">{{ successMessage }}</p>
+      <p v-if="errorMessage" class="text-envoie-style">{{ errorMessage }}</p>
     </form>
   </div>
 </template>
@@ -219,6 +219,10 @@ h1 {
     font-family: nexa-regular;
     width: fit-content;
     margin-top: 5vw;
+  }
+
+  .text-envoie-style {
+    font-size: 3vw;
   }
 
 
