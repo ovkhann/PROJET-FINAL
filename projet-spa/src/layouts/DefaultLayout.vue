@@ -790,7 +790,7 @@ nav a:first-of-type {
   /* Mobile menu */
   .mobile-menu {
     position: absolute;
-    top: 15vw;
+    top: 17vw;
     height: 91vh;
     left: 0;
     right: 0;
