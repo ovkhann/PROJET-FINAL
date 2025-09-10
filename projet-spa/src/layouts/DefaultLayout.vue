@@ -707,5 +707,20 @@ nav a:first-of-type {
 .text-style {
     font-size: 2vw;
 }
+
+.button {
+    background-color: #f2eadf;
+    color: #403933;
+    padding: .5vw 1vw;
+    border: none;
+    font-size: 3vw;
+    cursor: pointer;
+}
+
+.input {
+    font-size: 2.5vw;
+    width: 80%;
+    height: auto;
+}
 }
 </style>
