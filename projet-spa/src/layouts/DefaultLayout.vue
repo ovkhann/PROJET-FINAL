@@ -27,9 +27,9 @@ async function logoutUser() {
     <header>
       <div class="container-header">
         <div class="top-bloc-header">
-          <div class="logo-header">
+          <a href="/" class="logo-header">
             <img alt="Revolve Realm logo" src="@/assets/images/RRlogobrown.png" />
-          </div>
+          </a>
           <nav class="nav-auth">
             <div class="container-account" v-if="User.isLogged">
               <div class="account">
@@ -108,9 +108,6 @@ async function logoutUser() {
     <!-- FOOTER -->
     <footer>
       <div class="container-footer">
-        <div class="container-logo-footer">
-          <img src="@/assets/images/RRlogobrown.png" alt="Logo Revolve Realm">
-        </div>
         <div class="social-media">
           <span class="titre-social">OUR SOCIAL MEDIA</span>
           <div class="container-reseaux">
@@ -122,6 +119,9 @@ async function logoutUser() {
             </a>
           </div>
         </div>
+        <a href="/" class="container-logo-footer">
+          <img src="@/assets/images/RRlogobrown.png" alt="Logo Revolve Realm">
+        </a>
         <div class="container-subscribe">
           <h3 class="titre-subscribe">SUBSCRIBE</h3>
           <span class="text-style">

@@ -15,7 +15,7 @@ useHead({
     { property: 'og:title', content: 'Home | Revolve Realm' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/'  }
+    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/' }
   ]
 })
 
@@ -339,32 +339,32 @@ h2 {
     object-fit: cover;
     border-radius: 2vw;
     position: relative;
-}
+  }
 
-.product-name {
+  .product-name {
     margin: 0.5rem 0vw;
     font-size: 4vw;
     font-weight: bold;
     color: var(--color-brown);
-}
+  }
 
-.product-price {
+  .product-price {
     margin: 0.5rem 0vw;
     font-weight: bold;
     font-size: 4vw;
     color: var(--color-brown);
-}
+  }
 
-.option-select {
+  .option-select {
     font-size: 4vw;
     font-family: 'nexa-light';
     margin-bottom: 1vw;
     padding: 5px;
     border-radius: 5px;
     border: solid 2px var(--color-beige);
-}
+  }
 
-.add-to-cart-btn {
+  .add-to-cart-btn {
     padding: 0.5rem 2rem;
     background-color: var(--color-beige);
     color: var(--color-brown);
@@ -375,8 +375,57 @@ h2 {
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-}
+  }
 
+  .cover-image {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+  }
+
+  .who-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-evenly
+  }
+
+  .who-text {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 5vw;
+    height: auto;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .who-text p {
+    line-height: unset;
+    color: var(--color-beige);
+    text-align: justify;
+    font-size: 4vw;
+    width: 90%;
+    margin: 0vw;
+    text-align-last: center;
+  }
+
+  .who-text h2 {
+    text-align: center;
+    width: 90%;
+    font-size: 2rem;
+    margin: 5vw 0vw;
+    font-weight: 700;
+  }
+
+  .who-image {
+    width: 60%;
+    height: auto;
+    position: relative;
+    display: inline-flex;
+  }
 
 }
 </style>

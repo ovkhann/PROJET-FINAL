@@ -199,7 +199,7 @@ onMounted(fetchProducts);
 }
 
 .products-table th {
-  background: #f0f0f0;
+  background: var(--color-brown);
   font-weight: 600;
 }
 
