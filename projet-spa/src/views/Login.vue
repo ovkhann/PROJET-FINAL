@@ -41,7 +41,7 @@ async function login() {
           <span class="texte-style">Please enter your e-mail and password :</span>
         </div>
         <div class="container-champs">
-          <div v-if="errorMsg">{{ errorMsg }}</div>
+          <div id="erreur-style" v-if="errorMsg">{{ errorMsg }}</div>
           <div class="form-group">
             <input type="text" class="input" v-model="auth.email" placeholder="Email" />
             <!-- <FormError :errors="errors.email" /> -->
@@ -215,6 +215,11 @@ h2 {
     margin-top: 5vw;
   }
 
+  #erreur-style {
+    font-size: 3vw;
+    color: red !important;
+  }
+
   .button {
     background-color: #f2eadf;
     color: #403933;
@@ -232,11 +237,10 @@ h2 {
 
   form {
     text-align: center;
-    display: flex
-;
+    display: flex;
     gap: 5vw;
     flex-direction: column;
-}
+  }
 
 
 
