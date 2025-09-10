@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="sendMessage" class="space-y-4 max-w-md top-container">
+  <form @submit.prevent="sendMessage" class="top-container">
     <input v-model="form.name" type="text" placeholder="Votre nom" required class="border p-2 w-full" />
     <input v-model="form.email" type="email" placeholder="Votre email" required class="border p-2 w-full" />
     <input v-model="form.subject" type="text" placeholder="Sujet" class="border p-2 w-full" />
