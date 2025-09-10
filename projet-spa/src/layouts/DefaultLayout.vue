@@ -731,7 +731,7 @@ nav a:first-of-type {
   /* Top header */
   .top-bloc-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 1rem;
   }
@@ -800,7 +800,36 @@ nav a:first-of-type {
     border-top: 1px solid #ddd;
     z-index: 1000;
     justify-content: center;
+    align-items: center;
+  }
+
+  nav a[data-v-90296cda] {
+    display: inline-block;
+    padding: 0 1rem;
+    color: #403933;
+    font-family: nexa-bold;
+    border-left: unset;
+  }
+
+  .account {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vw;
     justify-content: center;
+  }
+
+  .deconnexion-button {
+    width: fit-content;
+    text-decoration: none;
+    background: none;
+    color: var(--color-brown);
+    transition: .4s;
+    font-family: nexa-bold;
+    padding: 0 .5vw;
+    border: none;
+    border-left: unset;
+    border-right: unset;
   }
 
   .slide-fade-enter-active,
@@ -813,6 +842,35 @@ nav a:first-of-type {
     opacity: 0;
     transform: translateY(-10px);
 
+  }
+
+  header {
+    max-height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    background-color: #f2eadf;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    box-shadow: 0 0 8px #000;
+  }
+
+  .logo-header {
+    display: block;
+    width: 25%;
+    height: auto;
+    position: absolute;
+    left: 38%;
+  }
+
+  .logo-header img {
+    width: 100%;
+    height: 17.5vw;
+    object-fit: cover;
+    object-position: center;
   }
 
 
