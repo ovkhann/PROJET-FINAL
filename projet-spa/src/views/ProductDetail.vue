@@ -330,7 +330,7 @@ function handleImageError(event: Event) {
   height: 40px;
   display: flex;
   color: var(--color-brown);
-  font-family: 'nexa-bold';
+  font-family: 'sans-serif';
   justify-content: center;
   background: var(--color-beige);
   align-items: center;
