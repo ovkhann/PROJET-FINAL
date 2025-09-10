@@ -334,7 +334,6 @@ function handleImageError(event: Event) {
   justify-content: center;
   background: var(--color-beige);
   align-items: center;
-  border: 1px solid var(--color-brown);
   cursor: pointer;
   -webkit-user-select: none;
   user-select: none;
@@ -428,11 +427,38 @@ function handleImageError(event: Event) {
     justify-content: center;
     background: var(--color-beige);
     align-items: center;
-    border: 1px solid var(--color-brown);
     cursor: pointer;
     -webkit-user-select: none;
     user-select: none;
     transition: all .2s;
+  }
+
+  .container-add-size {
+    display: flex;
+    gap: 5vw;
+    flex-direction: column;
+  }
+
+  .info-right p {
+    font-weight: 700;
+    margin: .5rem 0;
+    color: var(--color-brown);
+    font-family: nexa-book;
+    font-size: 3vw;
+    text-align: justify;
+  }
+
+  .add-to-cart-btn {
+    padding: .5rem 2rem;
+    background-color: var(--color-beige);
+    color: var(--color-brown);
+    border: none;
+    font-weight: 700;
+    font-size: 3vw;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
   }
 
 
