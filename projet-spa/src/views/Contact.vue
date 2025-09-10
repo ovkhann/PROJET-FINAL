@@ -1,16 +1,18 @@
 <template>
-  <form @submit.prevent="sendMessage" class="top-container">
-    <input v-model="form.name" type="text" placeholder="Votre nom" required class="border p-2 w-full" />
-    <input v-model="form.email" type="email" placeholder="Votre email" required class="border p-2 w-full" />
-    <input v-model="form.subject" type="text" placeholder="Sujet" class="border p-2 w-full" />
-    <textarea v-model="form.message" placeholder="Votre message" required class="border p-2 w-full"></textarea>
-    <div class="form-group">
-      <button type="submit" class="button">Envoyer</button>
-    </div>
+  <div class="formulaire-contact">
+    <form @submit.prevent="sendMessage" class="top-container">
+      <input v-model="form.name" type="text" placeholder="Votre nom" required class="border p-2 w-full" />
+      <input v-model="form.email" type="email" placeholder="Votre email" required class="border p-2 w-full" />
+      <input v-model="form.subject" type="text" placeholder="Sujet" class="border p-2 w-full" />
+      <textarea v-model="form.message" placeholder="Votre message" required class="border p-2 w-full"></textarea>
+      <div class="form-group">
+        <button type="submit" class="button">Envoyer</button>
+      </div>
 
-    <p v-if="successMessage" class="text-green-600 mt-2">{{ successMessage }}</p>
-    <p v-if="errorMessage" class="text-red-600 mt-2">{{ errorMessage }}</p>
-  </form>
+      <p v-if="successMessage" class="text-green-600 mt-2">{{ successMessage }}</p>
+      <p v-if="errorMessage" class="text-red-600 mt-2">{{ errorMessage }}</p>
+    </form>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -73,6 +75,10 @@ const sendMessage = async () => {
   box-shadow: 6px 10px 9px gray;
   background: #403933;
   padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-container input {
@@ -100,11 +106,21 @@ const sendMessage = async () => {
 }
 
 .form-group {
-    border-radius: 0vw;
-    border: unset;
-    font-family: nexa-regular;
-    width: 13vw;
+  border-radius: 0vw;
+  border: unset;
+  font-family: nexa-regular;
+  width: 13vw;
 }
 
-
+.formulaire-contact {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  flex: 1;
+  padding: 7vw;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
 </style>
