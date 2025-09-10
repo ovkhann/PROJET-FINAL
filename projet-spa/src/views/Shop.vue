@@ -198,7 +198,7 @@ function handleImageError(event: Event) {
 }
 
 .product-card:hover {
-  transform: scale(1.05);
+  transform: scale(0.9);
 }
 
 .product-card img {

@@ -69,7 +69,7 @@ function addProductToCart(product: Product) {
 
   const selectedOptionId = selectedOptions.value[product.id]
   if (!selectedOptionId) {
-    alert("Veuillez choisir une taille avant d’ajouter au panier !")
+    alert("Please select a size before adding to your cart !")
     return
   }
 
@@ -85,7 +85,7 @@ function addProductToCart(product: Product) {
     size: selectedOption?.size ?? null   // 👈 on passe la taille
   })
 
-  alert(`${product.name} ajouté au panier avec la taille ${selectedOption?.size} !`)
+  alert(`${product.name} has been added to your cart with size ${selectedOption?.size} !`)
 }
 
 
