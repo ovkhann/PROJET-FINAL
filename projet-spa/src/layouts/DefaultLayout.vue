@@ -755,7 +755,7 @@ nav a:first-of-type {
   }
 
   .burger-menu span.open:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(7px, 7px);
   }
 
   .burger-menu span.open:nth-child(2) {
