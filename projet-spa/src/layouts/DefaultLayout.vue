@@ -132,7 +132,8 @@ async function logoutUser() {
         </div>
       </div>
       <div class="bottom-container-footer">
-        <span class="politique"><a href="/privacy-policy"> PRIVACY POLICY</a> | <a href="/legal-notice">LEGAL NOTICE</a> | <a href="/refund-policy">REFUND POLICY</a></span>
+        <span class="politique"><a href="/privacy-policy"> PRIVACY POLICY</a> | <a href="/legal-notice">LEGAL NOTICE</a>
+          | <a href="/refund-policy">REFUND POLICY</a></span>
         <span class="revolve-realm">REVOLVE REALM™ | 2025</span>
       </div>
     </footer>
@@ -669,7 +670,7 @@ nav a:first-of-type {
 
 
 @media (max-width: 764px) {
-    .container-logo-footer {
+  .container-logo-footer {
     width: 33%;
     display: flex;
     height: auto;
@@ -681,46 +682,84 @@ nav a:first-of-type {
     object-fit: cover;
     height: 33vw;
     object-position: center;
-}
+  }
 
-.social-media {
-    display: flex
-;
+  .social-media {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 33%;
     height: auto;
-}
+  }
 
-.titre-social {
+  .titre-social {
     color: var(--color-brown);
     font-size: 4vw;
     text-align: center;
-}
+  }
 
-.titre-subscribe {
+  .titre-subscribe {
     margin-bottom: 0vw;
     font-size: 4vw;
-}
+  }
 
-.text-style {
+  .text-style {
     font-size: 2vw;
-}
+  }
 
-.button {
+  .button {
     background-color: #f2eadf;
     color: #403933;
     padding: .5vw 1vw;
     border: none;
     font-size: 3vw;
     cursor: pointer;
-}
+  }
 
-.input {
+  .input {
     font-size: 2.5vw;
     width: 80%;
     height: auto;
-}
+  }
+
+  .container-subscribe {
+    color: var(--color-brown);
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    text-align: center;
+    justify-content: center;
+    gap: .5vw;
+    align-items: center;
+  }
+
+  .bottom-container-footer[data-v-eb945c17] {
+    width: 100%;
+    color: var(--color-brown);
+    height: auto;
+    display: flex;
+    margin-top: unset;
+    padding: 0vw 2vw;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .politique {
+    font-size: 2.5vw;
+  }
+
+  .revolve-realm[data-v-eb945c17] {
+    font-family: nexa-bold;
+    font-size: 2.5vw;
+  }
+
+
+
+
+
+
+
 }
 </style>
