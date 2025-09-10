@@ -51,7 +51,7 @@ async function login() {
             <!-- <FormError :errors="errors.password" /> -->
           </div>
           <div class="form-group">
-            <button type="submit" class="button">Connexion</button>
+            <button type="submit" class="button">Login</button>
           </div>
         </div>
         <p class="register-link">

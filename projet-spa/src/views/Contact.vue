@@ -6,10 +6,12 @@
         <span class="texte-style">Contact us by filling out the form if you have any questions — we’ll get back to you
           as quickly as possible.</span>
       </div>
-      <input v-model="form.name" type="text" placeholder="Votre nom" required class="border p-2 w-full" />
-      <input v-model="form.email" type="email" placeholder="Votre email" required class="border p-2 w-full" />
-      <input v-model="form.subject" type="text" placeholder="Sujet" class="border p-2 w-full" />
-      <textarea v-model="form.message" placeholder="Votre message" required class="border p-2 w-full"></textarea>
+      <div class="container-champs">
+        <input v-model="form.name" type="text" placeholder="Your name" required class="border p-2 w-full" />
+        <input v-model="form.email" type="email" placeholder="Your e-mail" required class="border p-2 w-full" />
+        <input v-model="form.subject" type="text" placeholder="Subject" class="border p-2 w-full" />
+        <textarea v-model="form.message" placeholder="Your message" required class="border p-2 w-full"></textarea>
+      </div>
       <div class="form-group">
         <button type="submit" class="button">Send</button>
       </div>
@@ -79,7 +81,7 @@ const sendMessage = async () => {
   box-shadow: 6px 10px 9px gray;
   background: #403933;
   padding: 2vw;
-  gap: 0.8vw;
+  gap: 2vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,6 +100,15 @@ h1 {
   padding: .5vw;
   font-family: nexa-regular;
   width: 19vw;
+}
+
+.container-champs {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: .8vw;
+  justify-content: center;
+  align-items: center;
 }
 
 .top-container textarea {
