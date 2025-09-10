@@ -244,6 +244,7 @@ function handleImageError(event: Event) {
 .info-right {
   width: 100%;
   height: auto;
+  gap: 2vw;
   position: relative;
   display: flex;
   flex-direction: column;

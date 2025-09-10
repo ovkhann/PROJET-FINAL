@@ -82,7 +82,7 @@ function addProductToCart(product: Product) {
     price: product.price,
     picture: product.picture[0] ?? null,
     optionId: selectedOption?.id ?? null,
-    size: selectedOption?.size ?? null   // 👈 on passe la taille
+    size: selectedOption?.size ?? null
   })
 
   alert(`${product.name} has been added to your cart with size ${selectedOption?.size} !`)
