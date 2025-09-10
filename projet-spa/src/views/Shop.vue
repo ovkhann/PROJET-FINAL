@@ -224,8 +224,8 @@ function handleImageError(event: Event) {
 
   .shop-page {
     padding: unset;
-    height: 100vh;
     width: 100%;
+    margin-top: 10vw;
     text-align: center;
   }
 
