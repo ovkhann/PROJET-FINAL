@@ -33,7 +33,7 @@ async function logoutUser() {
           <nav class="nav-auth">
             <div class="container-account" v-if="User.isLogged">
               <div class="account">
-                <button class="deconnexion-button" @click="logoutUser">DÉCONNEXION</button>
+                <button class="deconnexion-button" @click="logoutUser">LOGOUT</button>
                 <span>{{ User.user?.email }}</span>
               </div>
               <div class="cart-icon" @click="toggleCart">
@@ -41,7 +41,7 @@ async function logoutUser() {
                 <span v-if="cartStore.totalItems > 0" class="cart-badge">{{ cartStore.totalItems }}</span>
               </div>
             </div>
-            <RouterLink class="connexion-header" to="/login" v-else>CONNEXION</RouterLink>
+            <RouterLink class="connexion-header" to="/login" v-else>LOGIN</RouterLink>
           </nav>
         </div>
         <div class="bottom-bloc-header">
@@ -64,12 +64,12 @@ async function logoutUser() {
     <!-- PANIER SLIDE-IN -->
     <div class="cart-panel" :class="{ open: isCartOpen }">
       <div class="container-titre-croix">
-        <h3 id="h3-cart">Mon Panier</h3>
+        <h3 id="h3-cart">My Cart</h3>
         <button class="cart-close-btn" @click="toggleCart">✕</button>
       </div>
 
       <!-- Panier vide -->
-      <div id="panier-vide" v-if="cartStore.items.length === 0">Votre panier est vide.</div>
+      <div id="panier-vide" v-if="cartStore.items.length === 0">Your cart is empty.</div>
 
       <!-- Liste des produits -->
       <div v-else class="cart-items">
@@ -80,14 +80,14 @@ async function logoutUser() {
           <div class="cart-item-info">
             <p>{{ item.name }}</p>
             <!-- Affichage de la taille -->
-            <p v-if="item.size">Taille : {{ item.size }}</p>
+            <p v-if="item.size">Size : {{ item.size }}</p>
 
             <p>
               {{ item.price.toFixed(2) }}€ x
               <input type="number" min="1" v-model.number="item.quantity"
                 @change="cartStore.updateQuantity(item.productId, item.optionId ?? null, item.quantity)" />
               <button class="btn-supprimer" @click="cartStore.removeItem(item.productId, item.optionId ?? null)">
-                Supprimer
+                Delete
               </button>
             </p>
           </div>
@@ -100,7 +100,7 @@ async function logoutUser() {
 
         <!-- Vider le panier -->
         <div v-if="cartStore.items.length > 0" class="cart-actions">
-          <button class="btn-clear-cart" @click="cartStore.clearCart()">Vider le panier</button>
+          <button class="btn-clear-cart" @click="cartStore.clearCart()">Clear cart</button>
         </div>
       </div>
     </div>

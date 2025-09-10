@@ -107,7 +107,7 @@ function handleImageError(event: Event) {
       <h2 class="section-title">NEW COLLECTION</h2>
 
       <div class="products-container" :class="{ 'centered': products.length < 4 }">
-        <div v-if="products.length === 0">Aucun produit disponible</div>
+        <div v-if="products.length === 0">No items available</div>
         <div v-else v-for="product in products" :key="product.id" class="product-card">
           <!-- Produit cliquable -->
           <router-link :to="{ name: 'product-detail', params: { id: product.id } }" class="product-link">
@@ -121,7 +121,7 @@ function handleImageError(event: Event) {
 
           <!-- Sélecteur de taille -->
           <select v-if="product.options.length" v-model="selectedOptions[product.id]" class="option-select">
-            <option :value="null" disabled>Choisir une taille</option>
+            <option :value="null" disabled>Choose a size</option>
             <option v-for="opt in product.options" :key="opt.id" :value="opt.id">
               {{ opt.size }}
             </option>
@@ -129,7 +129,7 @@ function handleImageError(event: Event) {
 
           <!-- Bouton Ajouter au panier -->
           <button v-if="User.isLogged" class="add-to-cart-btn" @click="addProductToCart(product)">
-            Ajouter au panier
+            Add to cart
           </button>
         </div>
       </div>
