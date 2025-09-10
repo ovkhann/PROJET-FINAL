@@ -85,8 +85,8 @@ async function logoutUser() {
               </div>
               <div class="auth-links">
                 <div class="account" v-if="User.isLogged">
-                  <button class="deconnexion-button" @click="logoutUser">LOGOUT</button>
                   <span>{{ User.user?.email }}</span>
+                  <button class="deconnexion-button" @click="logoutUser">LOGOUT</button>
                 </div>
                 <RouterLink v-else to="/login">LOGIN</RouterLink>
               </div>
@@ -751,7 +751,7 @@ nav a:first-of-type {
   .burger-menu span {
     display: block;
     height: 3px;
-    background-color: #333;
+    background-color: var(--color-brown);
     border-radius: 2px;
     transition: all 0.3s;
   }
@@ -768,22 +768,22 @@ nav a:first-of-type {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 
+  .container-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4vw;
+  }
+
   nav {
     width: fit-content;
     font-size: 5vw;
     height: auto;
-    gap: 4vw;
+    gap: 35vw;
     display: flex;
     text-align: center;
     flex-direction: column;
-    justify-content: center;
-  }
-
-  .container-compte-co {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4vw;
     justify-content: center;
   }
 
@@ -823,12 +823,13 @@ nav a:first-of-type {
   .deconnexion-button {
     width: fit-content;
     text-decoration: none;
-    background: none;
-    color: var(--color-beige);
+    background: var(--color-beige);
+    color: var(--color-brown);
     transition: .4s;
     font-family: nexa-bold;
-    padding: 0 .5vw;
+    padding: 1vw 5vw;
     border: none;
+    font-size: 3.5vw;
     border-left: unset;
     border-right: unset;
   }
