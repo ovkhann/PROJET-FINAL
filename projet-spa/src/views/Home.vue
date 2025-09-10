@@ -15,7 +15,7 @@ useHead({
     { property: 'og:title', content: 'Home | Revolve Realm' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://revolverealm.com/'  }
+    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/'  }
   ]
 })
 

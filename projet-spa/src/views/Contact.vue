@@ -1,14 +1,18 @@
 <template>
   <div class="formulaire-contact">
     <form @submit.prevent="sendMessage" class="top-container">
+      <div class="container-bloc-titre-connexion">
+        <h1 class="form-title">CONTACT</h1>
+        <span class="texte-style">Contact us by filling out the form if you have any questions — we’ll get back to you
+          as quickly as possible.</span>
+      </div>
       <input v-model="form.name" type="text" placeholder="Votre nom" required class="border p-2 w-full" />
       <input v-model="form.email" type="email" placeholder="Votre email" required class="border p-2 w-full" />
       <input v-model="form.subject" type="text" placeholder="Sujet" class="border p-2 w-full" />
       <textarea v-model="form.message" placeholder="Votre message" required class="border p-2 w-full"></textarea>
       <div class="form-group">
-        <button type="submit" class="button">Envoyer</button>
+        <button type="submit" class="button">Send</button>
       </div>
-
       <p v-if="successMessage" class="text-green-600 mt-2">{{ successMessage }}</p>
       <p v-if="errorMessage" class="text-red-600 mt-2">{{ errorMessage }}</p>
     </form>
@@ -27,7 +31,7 @@ useHead({
     { property: 'og:title', content: 'Contact | Revolve Realm' }
   ],
   link: [
-    { rel: 'canonical', href: 'https://revolverealm.com/contact' }
+    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/contact' }
   ]
 })
 
@@ -79,6 +83,11 @@ const sendMessage = async () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h1 {
+  color: rgb(242, 234, 223);
+  margin-bottom: 0vw;
 }
 
 .top-container input {

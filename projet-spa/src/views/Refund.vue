@@ -18,7 +18,7 @@ useHead({
     }
   ],
   link: [
-    { rel: 'canonical', href: 'https://revolverealm.com/refund-policy' }
+    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/refund-policy' }
   ]
 })
 </script>

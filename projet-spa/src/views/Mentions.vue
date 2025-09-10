@@ -18,7 +18,7 @@ useHead({
     }
   ],
   link: [
-    { rel: 'canonical', href: 'https://revolverealm.com/legal-notice' }
+    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/legal-notice' }
   ]
 })
 </script>

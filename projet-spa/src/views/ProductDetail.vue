@@ -97,7 +97,7 @@ watch(product, (newProduct) => {
       link: [
         {
           rel: 'canonical',
-          href: `https://revolverealm.com/products/${newProduct.slug}`
+          href: `https://projet-front.revolverealm.com/products/${newProduct.slug}`
         }
       ]
     })

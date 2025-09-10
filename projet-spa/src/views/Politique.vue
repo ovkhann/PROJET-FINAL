@@ -18,7 +18,7 @@ useHead({
     }
   ],
   link: [
-    { rel: 'canonical', href: 'https://revolverealm.com/privacy-policy' }
+    { rel: 'canonical', href: 'https://projet-front.revolverealm.com/privacy-policy' }
   ]
 })
 </script>
