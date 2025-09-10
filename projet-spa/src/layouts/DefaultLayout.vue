@@ -5,8 +5,16 @@ import * as AuthService from '@/_services/AuthService';
 import { ref } from 'vue'
 import { useCartStore } from '@/stores/cart'
 
+const mobileMenuOpen = ref(false);
 const cartStore = useCartStore()
 const isCartOpen = ref(false)
+
+function toggleMobileMenu() {
+  mobileMenuOpen.value = !mobileMenuOpen.value;
+}
+
+// logoutUser et toggleCart doivent venir de ton store ou méthodes
+
 
 function toggleCart() {
   isCartOpen.value = !isCartOpen.value
@@ -26,11 +34,14 @@ async function logoutUser() {
     <!-- HEADER -->
     <header>
       <div class="container-header">
+        <!-- Top bloc -->
         <div class="top-bloc-header">
           <a href="/" class="logo-header">
             <img alt="Revolve Realm logo" src="@/assets/images/RRlogobrown.png" />
           </a>
-          <nav class="nav-auth">
+
+          <!-- Navigation desktop/auth -->
+          <nav class="nav-auth desktop-only">
             <div class="container-account" v-if="User.isLogged">
               <div class="account">
                 <button class="deconnexion-button" @click="logoutUser">LOGOUT</button>
@@ -43,8 +54,17 @@ async function logoutUser() {
             </div>
             <RouterLink class="connexion-header" to="/login" v-else>LOGIN</RouterLink>
           </nav>
+
+          <!-- Burger menu icon (mobile) -->
+          <div class="burger-menu mobile-only" @click="toggleMobileMenu">
+            <span :class="{ open: mobileMenuOpen }"></span>
+            <span :class="{ open: mobileMenuOpen }"></span>
+            <span :class="{ open: mobileMenuOpen }"></span>
+          </div>
         </div>
-        <div class="bottom-bloc-header">
+
+        <!-- Bottom bloc desktop -->
+        <div class="bottom-bloc-header desktop-only">
           <div class="wrapper">
             <nav>
               <RouterLink to="/">HOME</RouterLink>
@@ -53,6 +73,24 @@ async function logoutUser() {
             </nav>
           </div>
         </div>
+
+        <!-- Mobile menu -->
+        <transition name="slide-fade">
+          <div class="mobile-menu" v-if="mobileMenuOpen">
+            <nav>
+              <RouterLink to="/" @click="mobileMenuOpen = false">HOME</RouterLink>
+              <RouterLink to="/shop" @click="mobileMenuOpen = false">SHOP</RouterLink>
+              <RouterLink to="/contact" @click="mobileMenuOpen = false">CONTACT</RouterLink>
+              <div class="auth-links">
+                <div v-if="User.isLogged">
+                  <button @click="logoutUser">LOGOUT</button>
+                  <span>{{ User.user?.email }}</span>
+                </div>
+                <RouterLink v-else to="/login">LOGIN</RouterLink>
+              </div>
+            </nav>
+          </div>
+        </transition>
       </div>
     </header>
 
