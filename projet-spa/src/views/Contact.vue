@@ -75,7 +75,7 @@ const sendMessage = async () => {
   padding: 2vw;
 }
 
-.form input {
+.top-container input {
   border-radius: 0vw;
   border: unset;
   padding: .5vw;
@@ -83,7 +83,7 @@ const sendMessage = async () => {
   width: 19vw;
 }
 
-.form textarea {
+.top-container textarea {
   border-radius: 0vw;
   border: unset;
   padding: .5vw;
@@ -104,7 +104,6 @@ const sendMessage = async () => {
     border: unset;
     font-family: nexa-regular;
     width: 13vw;
-    margin-top: 1.5vw;
 }
 
 
