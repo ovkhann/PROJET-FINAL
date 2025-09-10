@@ -161,7 +161,7 @@ function handleImageError(event: Event) {
         <!-- Sélecteur de taille -->
         <div class="container-add-size">
           <div v-if="product.options.length" class="size-options">
-            <label>Size :</label>
+            <label id="label-size">Size :</label>
             <div class="sizes">
               <div v-for="opt in product.options" :key="opt.id"
                 :class="['size-box', { selected: selectedOptionId === opt.id }]" @click="selectedOptionId = opt.id">
@@ -299,37 +299,45 @@ function handleImageError(event: Event) {
 
 
 
-
+#label-size {
+  color: var(--color-brown) !important;
+}
 
 .size-options {
-  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
 }
 
 .sizes {
   display: flex;
-  gap: 0.5rem; /* espace entre les carrés */
-  margin-top: 0.5rem;
+  gap: 0.5rem;
 }
 
 .size-box {
   width: 40px;
   height: 40px;
   display: flex;
+  color: var(--color-brown);
+  font-family: 'nexa-bold';
   justify-content: center;
+  background: var(--color-beige);
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-brown);
   cursor: pointer;
+  -webkit-user-select: none;
   user-select: none;
-  transition: all 0.2s;
+  transition: all .2s;
 }
 
 .size-box:hover {
-  border-color: #333;
+  background-color: var(--color-brown);
+  color: var(--color-beige);
 }
 
 .size-box.selected {
-  background-color: #333;
-  color: #fff;
-  border-color: #333;
+  background-color: var(--color-brown);
+  color: var(--color-beige);
+  border-color: var(--color-brown);
 }
 </style>
