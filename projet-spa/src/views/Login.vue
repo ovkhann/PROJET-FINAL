@@ -198,7 +198,7 @@ h2 {
     align-items: center;
   }
 
-  .input {
+  .form-group input {
     border-radius: 0vw;
     border: unset;
     padding: .5rem;
