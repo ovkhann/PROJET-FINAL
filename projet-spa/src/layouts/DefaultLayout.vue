@@ -734,7 +734,7 @@ nav a:first-of-type {
     align-items: center;
   }
 
-  .bottom-container-footer[data-v-eb945c17] {
+  .bottom-container-footer {
     width: 100%;
     color: var(--color-brown);
     height: auto;
@@ -750,7 +750,7 @@ nav a:first-of-type {
     font-size: 2.5vw;
   }
 
-  .revolve-realm[data-v-eb945c17] {
+  .revolve-realm {
     font-family: nexa-bold;
     font-size: 2.5vw;
   }
