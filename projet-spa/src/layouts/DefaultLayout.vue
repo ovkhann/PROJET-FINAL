@@ -56,7 +56,7 @@ async function logoutUser() {
           </nav>
 
           <!-- Burger menu icon (mobile) -->
-          <div class="cart-icon" @click="toggleCart">
+          <div class="cart-icon mobile-only" @click="toggleCart">
             <img src="@/assets/images/cart-icon.svg" alt="Panier" />
             <span v-if="cartStore.totalItems > 0" class="cart-badge">{{ cartStore.totalItems }}</span>
           </div>
